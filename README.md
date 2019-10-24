@@ -17,6 +17,30 @@ MSN532(Windows Live Messenger) 一款由Java开发的即时聊天软件。同一
 - 启动服务端
   
   运行```msn532-server\src\main\java\cn\edu\main\Server.java```启动服务端
+  
+   ![服务端](./doc/img/server.png)
 - 启动客户端
   
 1. 运行```msn532-client\src\main\java\cn\edu\main\Main.java```启动客户端
+
+   ![登录](./doc/img/login.png)
+   
+   输入用户名密码后，跳转主页面：
+   
+   ![主页面](./doc/img/zhangxiaojing_main.png)
+   
+   右键好友名称，点击“发送消息”：
+   
+   ![发送消息](./doc/img/zhangxiaojing_friend.png)
+   
+   弹出聊天面板，可进行聊天：
+   
+   ![聊天](./doc/img/zhangxiaojing_chat.png)
+   
+   如果对方也在线，在主面板的右上角会提示有新消息，点开后可查看消息
+   
+   ![查看消息](./doc/img/tanqi_chat.png)
+   
+#### 问题探讨
+
+本项目仅可用于学习，源码不授权任何商业行为，欢迎大家在issues里探讨，改进！
