@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.domain">
+    <class name="cn.edu.domain.User" table="msn_user" catalog="msn532">
+        <id name="userId" type="java.lang.Integer">
+            <column name="user_id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="userNickname" type="java.lang.String">
+            <column name="user_nickname" length="25" not-null="true"/>
+        </property>
+        <property name="userPassword" type="java.lang.String">
+            <column name="user_password" length="15" not-null="true"/>
+        </property>
+        <property name="userSex" type="cn.edu.util.SexType">
+            <column name="user_sex"/>
+        </property>
+        <set name="sendedMessages" inverse="true">
+            <key column="message_sender"/>
+            <one-to-many class="Message"/>
+        </set>
+        <set name="createdGroups" inverse="true">
+            <key column="creater"/>
+            <one-to-many class="Group"/>
+        </set>
+        <property name="isOnline" type="java.lang.Boolean">
+            <column name="is_online"></column>
+        </property>
+
+    </class>
+</hibernate-mapping>

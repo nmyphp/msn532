@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="cn.edu.domain">
+    <class name="Message" table="msn_message" catalog="msn532">
+        <id name="messageId" type="java.lang.Integer">
+            <column name="message_id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="messageContent" type="java.lang.String">
+            <column name="message_content" length="1024" not-null="true"/>
+        </property>
+        <property name="messageSendTime" type="java.sql.Date">
+            <column name="message_send_time" length="19" not-null="true"/>
+        </property>
+        <many-to-one name="Sender" column="messageSender" class="User"/>
+        <property name="receiverId" type="java.lang.Integer">
+            <column name="receiver_id" not-null="true"/>
+        </property>
+        <property name="messageType" type="cn.edu.util.MessageType">
+            <column name="message_type" not-null="true"></column>
+        </property>
+    </class>
+</hibernate-mapping>
