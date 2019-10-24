@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 
 <hibernate-mapping package="cn.edu.domain">
-    <class name="AddFriend" table="msn_addfriend" catalog="msn532">
-        <composite-id>
-            <key-property name="requestSenderId"></key-property>
-            <key-property name="requestReceiverId"></key-property>
-        </composite-id>
-        <property name="requestSenderId" type="java.lang.Integer" insert="false">
-            <column name="request_sender_id"></column>
-        </property>
-        <property name="requestReceiverId" type="java.lang.Integer" insert="false">
-            <column name="request_receiver_id"></column>
-        </property>
-    </class>
+	<class name="AddFriend" table="msn_addfriend" catalog="msn532">
+		<composite-id>
+			<key-property name="requestSenderId"></key-property>
+			<key-property name="requestReceiverId"></key-property>
+		</composite-id>
+		<property name="requestSenderId" type="java.lang.Integer" insert="false">
+			<column name="requestSenderID"></column>
+		</property>
+		<property name="requestReceiverId" type="java.lang.Integer" insert="false">
+			<column name="requestReceiverID"></column>
+		</property>
+	</class>
 </hibernate-mapping>

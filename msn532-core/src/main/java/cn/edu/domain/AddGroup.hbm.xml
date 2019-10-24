@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 
 <hibernate-mapping package="cn.edu.domain">
-    <class name="AddGroup" table="msn_addgroup" catalog="msn532">
-        <composite-id>
-            <key-property name="userId"></key-property>
-            <key-property name="groupId"></key-property>
-        </composite-id>
-        <property name="userId" column="userId" type="java.lang.Integer" insert="false"/>
-        <property name="groupId" column="groupId" type="java.lang.Integer" insert="false"/>
-    </class>
+	<class name="AddGroup" table="msn_addgroup" catalog="msn532">
+		<composite-id>
+			<key-property name="userId"></key-property>
+			<key-property name="groupId"></key-property>
+		</composite-id>
+		<property name="userId" column="UserID" type="java.lang.Integer" insert="false"/>
+		<property name="groupId" column="GroupID"  type="java.lang.Integer" insert="false"/>
+	</class>
 </hibernate-mapping>

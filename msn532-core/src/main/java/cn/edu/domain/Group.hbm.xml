@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 
 <hibernate-mapping package="cn.edu.domain">
-    <class name="Group" table="msn_group" catalog="msn532">
-        <id name="groupId" type="java.lang.Integer">
-            <column name="group_id"></column>
-            <generator class="identity"/>
-        </id>
-        <property name="groupName" type="java.lang.String">
-            <column name="group_name"></column>
-        </property>
-        <many-to-one name="creater" column="creater" class="User"/>
-    </class>
+	<class name="Group" table="msn_group" catalog="msn532">
+		<id name="groupId" type="java.lang.Integer">
+			<column name="groupID"></column>
+			<generator class="identity" />
+		</id>
+		<property name="groupName" type="java.lang.String">
+			<column name="groupName"></column>
+		</property>
+		<many-to-one name="creater" column="creater" class="User"/>
+	</class>
 </hibernate-mapping>
