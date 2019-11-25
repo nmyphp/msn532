@@ -36,8 +36,8 @@ CREATE TABLE `msn_group` (
   `groupID` int(11) NOT NULL DEFAULT '0',
   `groupName` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`groupID`),
-  KEY `FK2E353B088864B010` (`creater`),
-  CONSTRAINT `FK2E353B088864B010` FOREIGN KEY (`creater`) REFERENCES `msn_user` (`UserID`)
+  KEY `fk_creater` (`creater`),
+  CONSTRAINT `fk_creater` FOREIGN KEY (`creater`) REFERENCES `msn_user` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -57,8 +57,8 @@ CREATE TABLE `msn_message` (
   `receiverID` int(11) DEFAULT NULL,
   `messageType` tinyblob,
   PRIMARY KEY (`MessageID`),
-  KEY `FK9D404650240CEA16` (`messageSender`),
-  CONSTRAINT `FK9D404650240CEA16` FOREIGN KEY (`messageSender`) REFERENCES `msn_user` (`UserID`)
+  KEY `fk_messageSender` (`messageSender`),
+  CONSTRAINT `fk_messageSender` FOREIGN KEY (`messageSender`) REFERENCES `msn_user` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -76,7 +76,7 @@ CREATE TABLE `msn_user` (
   `UserSex` tinyblob,
   `isOnline` bit(1) DEFAULT NULL,
   PRIMARY KEY (`UserID`),
-  KEY `UserID` (`UserID`)
+  KEY `uk_userId` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
